@@ -4,10 +4,30 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #f0f0f0;
+:root {
+    --white: #fff;
+    --black: #000;
+    --background: #fdfdfd;
 }
 
+/* =================
+    Main Styles
+   ================= */
+
+body {
+    background-color: var(--background);
+    color: var(--black);
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.outer-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* =================
+Header and Nav
+   ================= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -21,9 +41,62 @@ ul {
 }
 
 li {
+    text-transform: uppercase;
+    font-size: .75rem;
     padding: 0 1em 0 0;
 }
 
 .logo {
+    width: 60%;
     max-width: 400px;
+}
+
+/* =================
+    Posts
+   ================= */
+
+.main-post {
+    height: 300px;
+    background-image: url(images/dog-cat-3.png);
+    background-size: cover;
+    display: flex;
+    align-items: end;
+}
+
+.main-post-text {
+    color: var(--white);
+    padding: 1.5em;
+}
+
+.main-post-date,
+.main-post-para {
+    font-weight: 200;
+}
+
+.main-post-title {
+    font-weight: 400;
+    text-shadow: 0 1px var(--black);
+    font-size: 2rem;
+}
+
+.posts {
+    padding: 2em 1em;
+}
+
+.post {
+    margin: 1.5em 0;
+}
+.post-image {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/* =================
+    Media queries
+   ================= */
+
+@media (min-width: 576px) {
+    .main-post {
+        height: 500px;
+    }
 }
