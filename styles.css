@@ -54,11 +54,18 @@ a:active {
     color: inherit
 }
 
+a:hover:not(.no-color),
+a:focus:not(.no-color) {
+    color: var(--purple);
+}
+
 a:hover,
 a:focus {
-    color: var(--purple);
     text-decoration: underline;
 }
+
+
+
 
 .logo {
     width: 60%;
@@ -84,18 +91,25 @@ a:focus {
 }
 
 .main-post-date,
-.main-post-para {
+.main-post-para,
+.top-post-date,
+.top-post-para {
     font-weight: 200;
 }
 
-.main-post-title {
+.main-post-title,
+.top-post-title {
     font-weight: 400;
     text-shadow: 0 1px var(--black);
     font-size: 2rem;
 }
 
+
 .posts {
     padding: 2em 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1.5em;
 }
 
 .post {
@@ -117,6 +131,8 @@ a:focus {
     text-align: center;
 }
 
+
+
 /* =================
     About page
    ================= */
@@ -134,6 +150,9 @@ a:focus {
 
 .about-top {
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-post-text {
@@ -146,6 +165,35 @@ a:focus {
 
 .about-post:not(:first-child) {
     margin: 1.5em 0;
+}
+
+
+
+/* =================
+    Post page
+   ================= */
+
+.top-post-container {
+    padding: 0 5em 2em;
+}
+
+.top-post-title {
+    margin: 1em 0;
+}
+
+.post-page {
+    padding: 1em 5em 0;
+}
+
+.top-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5em;
+}
+
+.top-post-img {
+    max-width: 96%;
 }
 /* =================
     Footer
@@ -176,5 +224,12 @@ a:focus {
 
     li {
         font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .about-top {
+        flex-direction: row;
+        gap: 2em;
     }
 }
